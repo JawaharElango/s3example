@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/file")
 public class S3Controller {
@@ -41,6 +43,11 @@ public class S3Controller {
     @DeleteMapping("/delete/{fileName}")
     public ResponseEntity<String> deleteFile(@PathVariable String fileName) {
         return new ResponseEntity<>(s3Service.deleteFile(fileName), HttpStatus.OK);
+    }
+
+    @GetMapping("/listAllFiles")
+    public ResponseEntity<List<String>> listAllFiles() {
+        return new ResponseEntity<>(s3Service.listAllFiles(), HttpStatus.OK);
     }
 }
 
