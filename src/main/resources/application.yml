@@ -1,0 +1,13 @@
+cloud:
+  aws:
+    credentials:
+      access-key: <<Access key>>
+      secret-key: <<secret Key>>
+    region:
+      us-east-1
+    stack:
+      auto: false
+
+application:
+  bucket:
+    name: jawahar-bucket
